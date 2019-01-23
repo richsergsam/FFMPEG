@@ -59,5 +59,15 @@ Current tunings include:
 * psnr – ignore this as it is only used for codec development
 * ssim – ignore this as it is only used for codec development
 
-
+## Scale video
+```bash
+ffmpeg -y -i "input_file"  -vf scale=720:-2 "output_file"
+# For save aspect ratio set up width or height as -1 (some codecs require -2)
+```
+## Crop video
+```bash
+ffmpeg -y -ss 00:06:00.0 -i "input_file" -t 00:02:19.0 "output_file"
+# -ss time stamp from
+# -t length of output video
+```
 
