@@ -1,7 +1,13 @@
 # FFMPEG
 Useful tips. Scripts. Function documentation.
-## FFMPEG help tips
+## Synopsis
+```bash 
+ffmpeg [global_options] {[input_file_options] -i input_url} ... {[output_file_options] output_url} ...
+```
+global_options:
+* ```-y``` do not ask for rewrite output file
 
+## FFMPEG help tips
 ```bash
 # Get avaliable hardware acceleration methods:
 ffmpeg -hwaccels
@@ -12,8 +18,18 @@ ffmpeg -formats
 # Get avaliable filters:
 ffmpeg -filters
 ```
+## Video convertation
+```bash 
+# Easiest way
+ffmpeg -i "input_file" "output_file"
+```
 ## H.264 Video Encoding Guide
 For more detailes see [ffmpeg_H.264_wiki](https://trac.ffmpeg.org/wiki/Encode/H.264)
+
+```bash
+# Base h264 convertation
+ffmpeg -y -hwaccel d3d11va -i "input_file"  -c:v libx264 -crf 23 -preset veryslow -tune zerolatency "output_file.mp4"
+```
 
 **List of "-preset" values:**
 * ultrafast
@@ -43,17 +59,5 @@ Current tunings include:
 * psnr – ignore this as it is only used for codec development
 * ssim – ignore this as it is only used for codec development
 
-## Video convertation
-```bash 
-# Easiest way
-ffmpeg -i "input_file" "output_file"
-# To h264
-ffmpeg -y -hwaccel d3d11va -i "input_file"  -c:v libx264 -crf 23 -preset veryslow -tune zerolatency "output_file.mp4"
-```
-### Synopsis
-```bash 
-ffmpeg [global_options] {[input_file_options] -i input_url} ... {[output_file_options] output_url} ...
-```
-global_options:
-* ```-y``` do not ask for rewrite output file
- 
+
+
