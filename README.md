@@ -74,7 +74,7 @@ ffmpeg -y -ss 00:06:00.0 -i "input_file" -t 00:02:19.0 "output_file"
 ## Extract frames
 To extract all frames: 
 ```bash
-ffmpeg -r 1 -i file.mp4 -r 1 "$filename%08d.png"
+ffmpeg -r 1 -i "input_file" -r 1 "$filename%08d.png"
 # -r <fps> set up FPS for input or output video
 ```
 # FFPLAY
