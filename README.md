@@ -80,6 +80,11 @@ ffmpeg -r 1 -i file.mp4 -r 1 "$filename%08d.png"
 ```bash
 ffplay "input_file"
 ```
+```bash
+# show time stamp 
+# TODO: not work!
+ffplay -vf "drawtext=text='%{pts\:hms}':box=1:x=(w-tw)/2:y=h-(2*lh)" "input_file"
+```
 **While playing:**
 * q, ESC - Quit.
 * f - Toggle full screen.
