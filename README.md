@@ -76,4 +76,26 @@ To extract all frames:
 ffmpeg -r 1 -i file.mp4 -r 1 "$filename%08d.png"
 # -r <fps> set up FPS for input or output video
 ```
+# FFPLAY
+```bash
+ffplay "input_file"
+```
+**While playing:**
+* q, ESC - Quit.
+* f - Toggle full screen.
+* p, SPC - Pause.
+* m - Toggle mute.
+* 9, 0 - Decrease and increase volume respectively.
+* /, * - Decrease and increase volume respectively.
+* a - Cycle audio channel in the current program.
+* v - Cycle video channel.
+* t - Cycle subtitle channel in the current program.
+* c - Cycle program.
+* w - Cycle video filters or show modes.
+* s - Step to the next frame. Pause if the stream is not already paused, step to the next video frame, and pause.
+* left/right - Seek backward/forward 10 seconds.
+* down/up - Seek backward/forward 1 minute.
+* page down/page up - Seek to the previous/next chapter. or if there are no chapters Seek backward/forward 10 minutes.
+* right mouse click - Seek to percentage in file corresponding to fraction of width.
+* left mouse double-click - Toggle full screen.
 
