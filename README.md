@@ -1,5 +1,6 @@
 # FFMPEG
 Useful tips. Scripts. Function documentation.
+See also https://www.ostechnix.com/20-ffmpeg-commands-beginners/
 ## Synopsis
 ```bash 
 ffmpeg [global_options] {[input_file_options] -i input_url} ... {[output_file_options] output_url} ...
