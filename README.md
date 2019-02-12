@@ -96,6 +96,6 @@ ffplay "input_file"
 * left/right - Seek backward/forward 10 seconds.
 * down/up - Seek backward/forward 1 minute.
 * page down/page up - Seek to the previous/next chapter. or if there are no chapters Seek backward/forward 10 minutes.
-* right mouse click - Seek to percentage in file corresponding to fraction of width.
+* **right mouse click - Seek to percentage in file corresponding to fraction of width.**
 * left mouse double-click - Toggle full screen.
 
