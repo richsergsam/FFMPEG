@@ -70,4 +70,10 @@ ffmpeg -y -ss 00:06:00.0 -i "input_file" -t 00:02:19.0 "output_file"
 # -ss time stamp from
 # -t length of output video
 ```
+## Extract frames
+To extract all frames: 
+```bash
+ffmpeg -r 1 file.mp4 -r 1 "$filename%03d.png"
+# -r <fps> set up FPS for input or output video
+```
 
