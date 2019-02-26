@@ -77,6 +77,12 @@ To extract all frames:
 ffmpeg -r 1 -i "input_file" -r 1 "$filename%08d.png"
 # -r <fps> set up FPS for input or output video
 ```
+## Remove parts without motion
+```bash
+ffmpeg -i "input_file" -vf "select=gt(scene\,0.003),setpts=N/(25*TB)" "output_file"
+# The higher the number, the more change between frames is ignored, in quick testing you might need to go as low as 0.00001-0.00005 depending on the kind of footage you're dealing with
+```
+
 # FFPLAY
 ```bash
 ffplay "input_file"
