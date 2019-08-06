@@ -82,6 +82,14 @@ ffmpeg -r 1 -i "input_file" -r 1 "$filename%08d.png"
 ffmpeg -i "input_file" -vf "select=gt(scene\,0.003),setpts=N/(25*TB)" "output_file"
 # The higher the number, the more change between frames is ignored, in quick testing you might need to go as low as 0.00001-0.00005 depending on the kind of footage you're dealing with
 ```
+## Batch processing. Scale and noise all *.avi files from directory.
+```bash
+# Windows CMD
+FOR /F "tokens=*" %G IN ('dir /b *.avi') DO ffmpeg -y -i "%G" -vf "scale=iw/2:ih/2,noise=alls=20:allf=t+u" "%~nG.avi"
+# Linux terminal
+for i in *.avi; do ffmpeg -y -i "$i" -vf "scale=iw/2:ih/2,noise=alls=20:allf=t+u" "${i%.*}.avi"; done
+```
+[Noise filter documentation](https://ffmpeg.org/ffmpeg-all.html#noise-1)
 
 # FFPLAY
 ```bash
