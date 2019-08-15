@@ -91,6 +91,24 @@ for i in *.avi; do ffmpeg -y -i "$i" -vf "scale=iw/2:ih/2,noise=alls=20:allf=t+u
 ```
 [Noise filter documentation](https://ffmpeg.org/ffmpeg-all.html#noise-1)
 
+## Concat video files with black frames betveen
+```bash
+# create black videofile
+ffmpeg -y -ss 00:00:00.0 -i input_1.MOV -t 00:00:1.0 -vf "drawbox=t=fill" "black.MOV"
+```
+Place black.MOV file to directory with other files. Create files.txt an write there:
+```bash
+file 'input_1.MOV'
+file 'black.MOV'
+file 'input_2.MOV'
+file 'black.MOV'
+file 'input_3.MOV'
+```
+```bash
+# concat files
+ffmpeg -f concat -safe 0 -i files.txt -c copy output.MOV
+```
+
 # FFPLAY
 ```bash
 ffplay "input_file"
